@@ -1,0 +1,48 @@
+#!/bin/bash
+#SBATCH --job-name=HalfLinkedPDMS
+#SBATCH -p RM-shared
+#SBATCH -N 1
+#SBATCH --ntasks=10
+#SBATCH -t 9:00:00
+
+# If you encounter an error that says "sbatch: error: Batch script contains DOS line breaks (\r\n)"
+# CD into the jobfile.job directory and run:
+# $ dos2unix jobfile.job
+
+# Load Modules used by SeqQuest
+module purge
+module load gcc/10.2.0
+module load openmpi/4.0.5-gcc10.2.0
+module load intel-mkl
+
+ulimit -s unlimited
+
+# Handle the library paths
+export LD_LIBRARY_PATH=$MKLROOT/lib/intel64:$LD_LIBRARY_PATH
+
+cd /ocean/projects/mat250017p/desantos/projects/HalfLinkedPDMSanalog # UPDATE BASED ON LOCATION
+
+# TIMER START
+START_TIME=$(date +%s)
+echo "------------------------------------------------"
+echo "Job started at: $(date)"
+echo "------------------------------------------------"
+
+# Use --overload-allowed if you really want to run 60 tasks on fewer than 60 cores
+# But for DFT (SeqQuest), it's better to run 1 task per 1 physical core.
+mpirun -np $SLURM_NTASKS --bind-to none /ocean/projects/mat250017p/desantos/seqquest_parallel/quest_265a.x # UPDATE FOR EACH USER
+
+# TIMER END
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
+
+# Convert seconds to HH:MM:SS for readability
+HOURS=$((DURATION / 3600))
+MINUTES=$(( (DURATION % 3600) / 60 ))
+SECONDS=$((DURATION % 60))
+
+# Record completion time
+echo "------------------------------------------------"
+echo "Job ended at: $(date)"
+echo "Total Runtime: ${HOURS}h ${MINUTES}m ${SECONDS}s"
+echo "------------------------------------------------"

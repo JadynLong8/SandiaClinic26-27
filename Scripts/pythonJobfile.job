@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=animate_lcao
+#SBATCH --output=animate_%j.out
+#SBATCH -p RM-shared
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
+#SBATCH -t 00:05:00
+
+module purge
+module load anaconda3/2022.10
+module load ffmpeg
+
+eval "$(conda shell.bash hook)"
+
+# 4. Activate your environment
+conda activate ase_env
+
+python3 IDPP.py out_images5.xyz out_efinal.xyz 1 /ocean/projects/mat250017p/desantos/projects/NEBCrosslinkWork/NEBCrosslink3/run16
+
+#python3 /ocean/projects/mat250017p/desantos/projects/Animate/hist2xyz.py
+#python3 /ocean/projects/mat250017p/desantos/projects/Animate/animatexyz.py
