@@ -1,0 +1,76 @@
+SEQQUEST SLAB POST-PROCESSING REPORT
+Run folder: run1   Slurm job: 50177977   sacct: COMPLETED 0:0 06:46:34
+slurm-50177977.err: 3072 bytes, read it
+
+INPUT SETTINGS FROM lcao.in
+Functional: PBE   Dimension: 2   k-grid: 6 6 0
+Scale: 7.62074 (found)   Cell: 8.0654 x 8.0654 x 161.3088 Å
+  geometry relaxation
+  gmethod
+  asd
+  gsteps
+  200
+  end geometry relaxation
+
+CONVERGENCE
+Geometry steps with forces: 59
+Force steps in lcao.out / frames in lcao.hist: 59 / 59
+Start max force: 2.5981 eV/Å
+Final max force: 0.0181 eV/Å (7.051E-04 Ry/bohr)
+Final RMS force: 0.0089 eV/Å
+Lowest max force: 0.0181 eV/Å at step 59
+Target 0.050 eV/Å: MET
+
+ENERGY
+Line used: FINAL RELAXED ENERGY =    -1734.9272738218
+Value: -1734.9272738218 (as printed)
+Confirm this is the final relaxed energy before using it as E_slab.
+
+STRUCTURE
+Atoms: 40   Composition: Ba8 O24 Ti8
+Closest pair: 1.809 Å (O5 - Ti15)
+Removed a uniform z offset of -10.645 Å between lcao.geom and lcao.hist.
+Displacement from first step: RMS 0.106 Å, maximum 0.213 Å (Ti15)
+Atoms that did not move: 0
+
+LAYERS (bottom to top; cation minus oxygen z is the rumpling)
+Layer Composition           z (Å)    Rumple (Å)     Start (Å)  Spacing (Å)
+    1 O8 Ti4               -2.035         0.122         0.000             
+    2 Ba4 O4               -0.110        -0.095         0.000        1.925
+    3 O8 Ti4                1.994         0.031         0.000        2.104
+    4 Ba4 O4                3.896        -0.060         0.000        1.902
+Bottom termination: O8 Ti4   Top termination: Ba4 O4
+
+Ti-O BONDS (cutoff 2.60 Å)
+Shortest: 1.809 Å   Longest: 2.288 Å
+    Ti    Neighbors      Min (Å)      Max (Å)
+    14            6        1.906        2.099
+    15            5        1.809        2.288
+    16            6        1.913        2.073
+    17            6        1.911        2.081
+    18            5        1.813        2.276
+    19            5        1.813        2.286
+    20            6        1.918        2.055
+    21            5        1.824        2.190
+
+WARNINGS
+None
+
+LAST 15 LINES OF lcao.out
+     34       O                 1.0310378676   -0.4747406089   -0.5144090982 
+     35       O                -0.4750586446    1.0334410309   -0.5167839828 
+     36       O                -0.5037245692   -0.5035756117    0.9738701372 
+     37       Ba                0.9965688352    0.9969112153   -0.0551743294 
+     38       Ba                1.0000084099   -0.0013080936    0.9587480363 
+     39       Ba               -0.0005988082    1.0000904635    0.9584598594 
+     40       Ba                1.0001191758    1.0002889286    0.9669257671 
+ ###############################################################################
+
+ FINAL RELAXED ENERGY =    -1734.9272738218
+
+
+ AFTER GEOMETRY   +    0.05 =   24391.3 seconds wall (    0.00 usr    0.00 sys)
+ Normal exit: RELAX DONE
+ Total TIME=   24391.3 seconds (usr=   23724.6  sys=     152.2  lost=     514.5)
+
+Force plot: force_convergence.png
