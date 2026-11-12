@@ -28,13 +28,13 @@ jobfile.job
 *.s
 
 # Ignore Seqquest Executable (Copyright by Sandia)
-seqquest_parallel-20251006T044228Z-1-001.zip
-seqquest_parallel_IDPP.zip
-seqquest_serial.zip
-seqquest_parallel.zip
-seqquest_parallel_IDPP
-seqquest_parallel
-seqquest_serial
+#seqquest_parallel-20251006T044228Z-1-001.zip
+#seqquest_parallel_IDPP.zip
+#seqquest_serial.zip
+#seqquest_parallel.zip
+#seqquest_parallel_IDPP
+#seqquest_parallel
+#seqquest_serial
 
 #ORCA
 orca_6_1_1_linux_x86-64_shared_openmpi418_avx2.tar.xz
