@@ -1,0 +1,744 @@
+mpif77 -O1 -g -fbacktrace -std=legacy  -c -o lcaomain_tp.o lcaomain_tp.f
+lcaomain_tp.f:1644:47:
+
+ 1644 |      $ ratm,rlat,wk(icoskr),wk(isinkr),  veck, wksmk,
+      |                                               1
+......
+ 4154 |      $ ratm,rlat,wk(icoskr),wk(isinkr),  vecknsm, wksmk,
+      |                                                  2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-2)
+lcaomain_tp.f:1837:20:
+
+ 1837 |      $   nstate,nk, wtk,wk(ieigval),wk(ieigpop) )
+      |                    1
+......
+ 4297 |      $   nstate,nk, wtk,wk(ieigval),wk(ieigpop) )
+      |                    2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
+lcaomain_tp.f:2178:28:
+
+ 1162 |         call SYMVEC( 1,origws, rsym, nsym, rmatsym )
+      |                       2     
+......
+ 2178 |             call SYMVEC( 1, dipole, vec0, nsym, rmatsym )
+      |                            1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaomain_tp.f:2179:27:
+
+ 1162 |         call SYMVEC( 1,origws, rsym, nsym, rmatsym )
+      |                       2    
+......
+ 2179 |             call SYMVEC( 1,rdipole, rsym, nsym, rmatsym )
+      |                           1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaomain_tp.f:2764:20:
+
+ 2764 |      $   nstate,nk, wtk,wk(ieigval),wk(ieigpop) )
+      |                    1
+......
+ 4297 |      $   nstate,nk, wtk,wk(ieigval),wk(ieigpop) )
+      |                    2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
+lcaomain_tp.f:2860:20:
+
+ 2860 |      $   nstate,nk, wtk,wk(ieigval),wk(ieigpop) )
+      |                    1
+......
+ 4297 |      $   nstate,nk, wtk,wk(ieigval),wk(ieigpop) )
+      |                    2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
+mpif77 -O1 -g -fbacktrace -std=legacy  -c -o lcaosubs.o lcaosubs.f
+lcaosubs.f:9327:72:
+
+ 9327 |           call CFFTB( n1r, array(1,j2,j3),ws1 )
+      |                                                                        1
+Warning: Type mismatch in argument 'c' at (1); passed COMPLEX(8) to REAL(8)
+lcaosubs.f:9335:27:
+
+ 9333 |           call ZCOPY( n2r, array(j1,1,j3),n1r, ftarray,1 )
+      |                           2
+ 9334 |           call CFFTB( n2r, ftarray,ws2 )
+ 9335 |           call ZCOPY( n2r, ftarray,1, array(j1,1,j3),n1r )
+      |                           1
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (REAL(8)/COMPLEX(8)).
+lcaosubs.f:9488:72:
+
+ 9488 |           call CFFTF( n1r, array(1,j2,j3),ws1 )
+      |                                                                        1
+Warning: Type mismatch in argument 'c' at (1); passed COMPLEX(8) to REAL(8)
+lcaosubs.f:51861:72:
+
+51861 |         call YLMREAL( ylm,2,angsamp(1,iang) )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:40720:72:
+
+40720 |           call YLMREAL( ylmj, ljmax+lmxnl, rj )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:40890:72:
+
+40890 |                     call YLMREAL( ylmi(1,1,ieqlat), limax+lmxnl, ri )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:40959:72:
+
+40959 |      $         ylmj,gntcomb,angsav,angsav(igntj),angsav(ignti) )
+      |                                                                        1
+Warning: Type mismatch in argument 'gntci' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:35866:72:
+
+35866 |       call MKZERO( 2*limxp1*lmi*maxkm, gntci )
+      |                                                                        1
+Warning: Type mismatch in argument 'a' at (1); passed COMPLEX(8) to REAL(8)
+lcaosubs.f:59624:40:
+
+41160 |         call MPREDUC8( master, nmat, vnlij, vnltp, icomm )
+      |                                     2   
+......
+59624 |         call MPREDUC8( iprocl0, nreduc, atm0enii, eiitmp, icomm )
+      |                                        1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:59627:40:
+
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2 
+......
+59627 |         call MPBCAST8( iprocl0, nreduc, atm0enii, icomm )
+      |                                        1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:54361:33:
+
+54361 |         call MPBCAST8( master, 1,rnlatmx, icomm )
+      |                                 1
+......
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:40016:72:
+
+40016 |           call YLMREAL( ylmj, ljmax+lmxnl, rj )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:40197:72:
+
+40197 |                     call YLMREAL( ylmi(1,1,ieqlat), limax+lmxnl, ri )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:40266:72:
+
+40266 |      $         ylmj,gntcomb,angsav,angsav(igntj),angsav(ignti) )
+      |                                                                        1
+Warning: Type mismatch in argument 'gntci' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:58889:39:
+
+41160 |         call MPREDUC8( master, nmat, vnlij, vnltp, icomm )
+      |                                     2  
+......
+58889 |         call MPREDUC8( master, nreduc, atm0enii, eiitmp, icomm )
+      |                                       1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:58891:39:
+
+58891 |         call MPBCAST8( master, nreduc, atm0enii, icomm )
+      |                                       1
+......
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:67409:50:
+
+67409 |                   call MPSENDI( master,  1,       mymatpr, icomm )
+      |                                                  1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2          
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:67417:23:
+
+67417 |      $                 mymatprb,         icomm )
+      |                       1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:51400:41:
+
+51400 |             call MPRECVI( jproc, lenmsg, nlatpr, icomm )
+      |                                         1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2      
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:51405:40:
+
+51405 |           call MPSENDI( master, lenmsg, nlatmx, icomm )
+      |                                        1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:51413:41:
+
+51413 |             call MPSENDI( jproc, lenmsg, nlatmx, icomm )
+      |                                         1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2 
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:51417:40:
+
+51417 |           call MPRECVI( master, lenmsg, nlatmx, icomm )
+      |                                        1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2     
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:39202:72:
+
+39202 |           call DYLM( ylmj,grylmj, ljmax+lmxnl, rj )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:39409:72:
+
+39409 |      $                         limax+lmxnl, ri )
+      |                                                                        1
+Warning: Type mismatch in argument 'ylm' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:39515:72:
+
+39515 |      $           angsav,angsav(iangt),angsav(igntj),angsav(ignti) )
+      |                                                                        1
+Warning: Type mismatch in argument 'gntcomb' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:39647:72:
+
+39647 |      $               angsav,angsav(iangt),angsav(igntj),angsav(ignti) )
+      |                                                                        1
+Warning: Type mismatch in argument 'gntcomb' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:36062:72:
+
+36062 |       call MKZERO( 2*ljsq*lmj*maxkm, cgntcj )
+      |                                                                        1
+Warning: Type mismatch in argument 'a' at (1); passed COMPLEX(8) to REAL(8)
+lcaosubs.f:68281:47:
+
+68281 |                   call MPSENDI(master, lenmsg, matpr, icomm)
+      |                                               1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2       
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:68291:46:
+
+68291 |                   call MPRECVI(jproc, lenmsg, matjpr, icomm)
+      |                                              1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2           
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:29157:37:
+
+29157 |         call IONGPOT( ndim, esion, 1,qgaus,origlm,
+      |                                     1
+Warning: Rank mismatch in argument 'qlmcc' at (1) (rank-1 and scalar)
+lcaosubs.f:24173:37:
+
+24173 |                   call CAXPY( nrbox, cnic, wvfcns(1,1,iwv),1,
+      |                                     1
+......
+61547 |                   call CAXPY( nrbox, dmatc, wvfcns(1,1,ikloc,jb),1,
+      |                                     2
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (COMPLEX(4)/REAL(4)).
+lcaosubs.f:32196:32:
+
+ 9515 |       call DSCAL( 2*n1r*n2r*n3r, wnorm, array,1 )
+      |                                        2
+......
+32196 |         call DSCAL( nptr, half, drho(1,iu),1 )
+      |                                1
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (REAL(8)/COMPLEX(8)).
+lcaosubs.f:25283:34:
+
+25283 |         call MPBCAST8( iprocl0, 1,rlatmax, icomm )
+      |                                  1
+......
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:42914:42:
+
+42914 |         call MKNRWT( alfsmpl,wtsum,rnr,hh,nnr,nnr(2),nnr(3),wkr(iwts+1))
+      |                                          1
+Warning: Rank mismatch in argument 'n1' at (1) (scalar and rank-1)
+lcaosubs.f:15853:27:
+
+15853 |         call DCOPY( natmg, one,0, wt,1 )
+      |                           1
+......
+65735 |       call DCOPY( nveclocl, veclocl,1, wbroy(ipvec),1 )
+      |                            2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:15860:29:
+
+15860 |           call DCOPY( natmg, one,0, wt,1 )
+      |                             1
+......
+65735 |       call DCOPY( nveclocl, veclocl,1, wbroy(ipvec),1 )
+      |                            2 
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:19101:72:
+
+19101 |      $call CFFT3D( rhog, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:19115:72:
+
+19115 |           call CFFT3DB( drhog, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:19176:72:
+
+19176 |             call CFFT3DB( drhog, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:49209:72:
+
+49209 |           call FILTERZMAT( wmat(1,3),norb,norb,small )
+      |                                                                        1
+Warning: Type mismatch in argument 'a' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:49214:72:
+
+49214 |           call CANON_XMAT( wmat(1,3),norb,norb,neff,seval,scut,small )
+      |                                                                        1
+Warning: Type mismatch in argument 'u' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:49217:72:
+
+49217 |           call SYMZMAT( wmat(1,1),norb,norb,small )
+      |                                                                        1
+Warning: Type mismatch in argument 'a' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:1051:72:
+
+ 1051 |       call cfftf1 (n,c,wsave,wsave(iw1),wsave(iw2))
+      |                                                                        1
+Warning: Type mismatch in argument 'ifac' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:646:72:
+
+  646 |       call cfftb1 (n,c,wsave,wsave(iw1),wsave(iw2))
+      |                                                                        1
+Warning: Type mismatch in argument 'ifac' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:9247:42:
+
+ 9247 |         call RINTRNL( ndim,natm, dolvatm, oldprim,orig,rscale,
+      |                                          1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:9260:42:
+
+ 9260 |         call REXTRNL( ndim,natm, dolvatm, rprim,orig,rscale,
+      |                                          1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:552:72:
+
+  552 |       call cffti1 (n,wsave(iw1),wsave(iw2))
+      |                                                                        1
+Warning: Type mismatch in argument 'ifac' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:4261:47:
+
+ 4261 |               call MPRECVI( kmasterpr, lenmsg, inewdef, icomml )
+      |                                               1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2            
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:4278:43:
+
+ 4278 |             call MPSENDI( masterl, lenmsg, inewdef, icomml)
+      |                                           1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2   
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10789:41:
+
+10789 |             call MPRECVI( jproc, lenmsg, ndvjpr, icomm )
+      |                                         1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2      
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10792:44:
+
+10792 |               call MPRECVI(  jproc, lenmsg, idvmxjpr,  icomm )
+      |                                            1
+......
+75093 |       call MPRECVI( nodei, lenmsg, msgneb, icomm )
+      |                                   2         
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10793:44:
+
+10793 |               call MPRECVR8( jproc, lenmsg, chgmaxjpr, icomm )
+      |                                            1
+......
+62182 |           call MPRECVR8( masterl, lenmsg, dmatrd, icomml )
+      |                                          2  
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10794:44:
+
+10794 |               call MPRECVR8( jproc, lenmsg, chgrmsjpr, icomm )
+      |                                            1
+......
+62182 |           call MPRECVR8( masterl, lenmsg, dmatrd, icomml )
+      |                                          2  
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10806:42:
+
+10806 |             call MPSENDI( master, lenmsg, ndvloc, icomm )
+      |                                          1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2  
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10809:45:
+
+10809 |               call MPSENDI(  master, lenmsg, idvmx,  icomm )
+      |                                             1
+......
+75123 |       call MPSENDI( neb_master, lenmsg, msgneb, icomm )
+      |                                        2     
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10810:45:
+
+10810 |               call MPSENDR8( master, lenmsg, chgmax, icomm )
+      |                                             1
+......
+62177 |             call MPSENDR8( kmasterpr, lenmsg, dmatrd, icomml )
+      |                                              2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:10811:45:
+
+10811 |               call MPSENDR8( master, lenmsg, chgrms, icomm )
+      |                                             1
+......
+62177 |             call MPSENDR8( kmasterpr, lenmsg, dmatrd, icomml )
+      |                                              2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:17077:72:
+
+17077 |       call CFFT3D( espot, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:17136:72:
+
+17136 |         call CFFT3DB( espot, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:17494:72:
+
+17494 |      $     wmat(iw1), wmat(iww), wmat(iwx) )
+      |                                                                        1
+Warning: Type mismatch in argument 'iwork' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:17541:72:
+
+17541 |      $     wmat(1+3*nstk), wmat(1+4*nstk) )
+      |                                                                        1
+Warning: Type mismatch in argument 'klvl' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:22593:21:
+
+22593 |           call BOXR( hh,ira0,irb0,irc0, idra,idrb,idrc, r0box,boxctr )
+      |                     1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:22594:23:
+
+22594 |           call MKRBOX( hh,r0box, idra,idrb,idrc, wkbox )
+      |                       1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:22617:21:
+
+22617 |           call BOXR( hh,ira0,irb0,irc0, idra,idrb,idrc, r0box,boxctr )
+      |                     1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:22618:23:
+
+22618 |           call MKRBOX( hh,r0box, idra,idrb,idrc, rmesh )
+      |                       1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:30041:44:
+
+30041 |           call REXTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                            1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:30064:44:
+
+30064 |           call REXTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                            1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:30087:44:
+
+30087 |           call REXTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                            1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:30097:44:
+
+30097 |           call REXTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                            1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:30121:46:
+
+30121 |             call REXTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                              1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:30173:46:
+
+30173 |             call REXTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                              1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:30729:13:
+
+30729 |      $ nafrc,iforce, frc1,frc2, str1,str2,
+      |             1
+Warning: Rank mismatch in argument 'iforce' at (1) (rank-1 and scalar)
+lcaosubs.f:30765:26:
+
+30765 |       call NLOCFRC( nafrc,iforce, ndim, frc1,str1,
+      |                          1
+Warning: Rank mismatch in argument 'iforce' at (1) (rank-1 and scalar)
+lcaosubs.f:30792:26:
+
+30792 |       call VLOCFRC( nafrc,iforce, ndim, frc1,str1,
+      |                          1
+Warning: Rank mismatch in argument 'iforce' at (1) (rank-1 and scalar)
+lcaosubs.f:35368:72:
+
+35368 |      $       wksma(1, 1), wksma(1, 4), wksma(1, 7) )
+      |                                                                        1
+Warning: Type mismatch in argument 'nxatm' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:35374:72:
+
+35374 |             call ICOPYOFF( natmg, wksma(1,16),0, tmp(i_nx),nx_off )
+      |                                                                        1
+Warning: Type mismatch in argument 'i1vec' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:35404:72:
+
+35404 |      $       tmp(i_trlx1), tmp(i_trlx2), ntmp3,tmp(i_tmp3) )
+      |                                                                        1
+Warning: Type mismatch in argument 'nxatm' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:42446:48:
+
+42446 |               call MKNRWT( alfsmpl,wtsum,rnr,hh,nnr,nnr(2),nnr(3),wtnr )
+      |                                                1
+Warning: Rank mismatch in argument 'n1' at (1) (scalar and rank-1)
+lcaosubs.f:44316:31:
+
+44316 |          call DLARUV( iseed,1, theta )
+      |                               1
+......
+44437 |          call DLARUV( iseed, 6, urndm )
+      |                                2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:44318:31:
+
+44318 |          call DLARUV( iseed,1, phi )
+      |                               1
+......
+44437 |          call DLARUV( iseed, 6, urndm )
+      |                                2
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:50937:47:
+
+50937 |      $ itypa, numshl,lshel,nala,ala,cala, ratm,hh,rlat,
+      |                                               1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:50946:47:
+
+50946 |      $ itypa, numshl,lshel,nala,ala,cala, ratm,hh,rlat,
+      |                                               1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:50956:47:
+
+50956 |      $ itypa, numshl,lshel,               ratm,hh,rlat,
+      |                                               1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:50998:40:
+
+50998 |       call RINTRNL( ndim,  1 , dolvatm, rprim,vec0,rscale,
+      |                                        1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:51011:40:
+
+51011 |       call RINTRNL( ndim,  1 , dolvatm, rprim,orig,rscale,
+      |                                        1
+Warning: Actual argument contains too few elements for dummy argument 'rprim' (9/12) at (1)
+lcaosubs.f:55574:72:
+
+55574 |       call CFFT3D( espot, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:55605:72:
+
+55605 |       call CFFT3DB( espot, n1r,n2r,n3r, ws1,ws2,ws3, ftarray )
+      |                                                                        1
+Warning: Type mismatch in argument 'array' at (1); passed REAL(8) to COMPLEX(8)
+lcaosubs.f:61973:19:
+
+61973 |         call BOXR( hh,ira0,irb0,irc0, idra,idrb,idrc, r0box,boxctr )
+      |                   1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:61974:21:
+
+61974 |         call MKRBOX( hh,r0box, idra,idrb,idrc, rmesh )
+      |                     1
+Warning: Actual argument contains too few elements for dummy argument 'hh' (3/9) at (1)
+lcaosubs.f:66395:40:
+
+41160 |         call MPREDUC8( master, nmat, vnlij, vnltp, icomm )
+      |                                     2   
+......
+66395 |         call MPREDUC8( masterl, lenred, dfnorm,dfnormtp, icomml )
+      |                                        1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:66399:40:
+
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2 
+......
+66399 |         call MPBCAST8( masterl, lenred, dfnorm, icomml )
+      |                                        1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:66962:72:
+
+66962 |      $ wklvl(1*4*nstall),wklvl(1+5*nstall) )
+      |                                                                        1
+Warning: Type mismatch in argument 'klvl' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs.f:69432:38:
+
+62205 |         call MPBCAST4( master_k, lenmsg, dmat, icomm_k )
+      |                                         2
+......
+69432 |           call MPBCAST4( master_k, 1, r4msg, icomm_k )
+      |                                      1
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(4)/REAL(4)).
+lcaosubs.f:74816:27:
+
+65735 |       call DCOPY( nveclocl, veclocl,1, wbroy(ipvec),1 )
+      |                            2
+......
+74816 |         call DCOPY( nrlx , one,0, wt,1 )
+      |                           1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:75343:38:
+
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2
+......
+75343 |           call MPBCAST8( master, len, scf_conv,       icomm )
+      |                                      1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:75344:38:
+
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2
+......
+75344 |           call MPBCAST8( master, len, geo_conv,       icomm )
+      |                                      1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+lcaosubs.f:75345:38:
+
+59620 |         call MPBCAST8( iprocl0, nvtmp, vtmp, icomm )
+      |                                       2
+......
+75345 |           call MPBCAST8( master, len, cell_conv,      icomm )
+      |                                      1
+Warning: Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+mpif77 -O1 -g -fbacktrace -std=legacy  -c -o lcaosubs_tp.o lcaosubs_tp.f
+lcaosubs_tp.f:4078:72:
+
+ 4078 |      $     wmat(iw1), wmat(iww), wmat(iwx) )
+      |                                                                        1
+Warning: Type mismatch in argument 'iwork' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs_tp.f:4392:39:
+
+ 4392 |       call MPBCASTI( master_k, lenmsg, my_kpmaster, icomm_k )
+      |                                       1
+Warning: Rank mismatch in argument 'imsg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:4979:72:
+
+ 4979 |         call print_ifail_array( IERRFL, wmat(iwiwk1), norb )
+      |                                                                        1
+Warning: Type mismatch in argument 'iarray' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs_tp.f:5005:72:
+
+ 5005 |         call print_ifail_array( IERRFL, wmat(iwiwk1), 1 )
+      |                                                                        1
+Warning: Type mismatch in argument 'iarray' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs_tp.f:318:22:
+
+  318 |       call MPI_Bcast( imsg, lenmsg, MPI_INTEGER,
+      |                      1
+......
+  353 |       call MPI_Bcast( r8msg, lenmsg, MPI_DOUBLE_PRECISION,
+      |                      2
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(4)/REAL(8)).
+lcaosubs_tp.f:4240:42:
+
+ 4240 |             call MPSENDI( master, lenmsg, istate, icomm )
+      |                                          1
+Warning: Rank mismatch in argument 'imsg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:4245:42:
+
+ 4245 |             call MPRECVI( jproc,  lenmsg, istate, icomm )
+      |                                          1
+Warning: Rank mismatch in argument 'imsg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:4257:37:
+
+ 4257 |       call MPBCASTI( master, lenmsg, imasters, icomm )
+      |                                     1
+Warning: Rank mismatch in argument 'imsg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:242:21:
+
+  178 |       call MPI_RECV( r8msg, lenmsg,
+      |                     2
+......
+  242 |       call MPI_RECV( imsg, lenmsg,
+      |                     1
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(4)/REAL(8)).
+lcaosubs_tp.f:218:21:
+
+  154 |       call MPI_SEND( r8msg, lenmsg,
+      |                     2
+......
+  218 |       call MPI_SEND( imsg, lenmsg,
+      |                     1
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(4)/REAL(8)).
+lcaosubs_tp.f:1707:72:
+
+ 1707 |      $     wmat(iw1), wmat(iww), wmat(iwx) )
+      |                                                                        1
+Warning: Type mismatch in argument 'iwork' at (1); passed REAL(8) to INTEGER(4)
+lcaosubs_tp.f:828:43:
+
+  828 |           call MPSENDR8( isource, lenrcpt, rcpt, icomm )
+      |                                           1
+Warning: Rank mismatch in argument 'r8msg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:840:41:
+
+  840 |         call MPRECVR8( iprocl0, lenrcpt, rcpt, icomm )
+      |                                         1
+Warning: Rank mismatch in argument 'r8msg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:285:39:
+
+  285 |       call MPRECVR8( isource, lenmsg , rcpt, icomm )
+      |                                       1
+Warning: Rank mismatch in argument 'r8msg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:271:39:
+
+  271 |       call MPSENDR8( itarget, lenmsg , rcpt, icomm )
+      |                                       1
+Warning: Rank mismatch in argument 'r8msg' at (1) (rank-1 and scalar)
+lcaosubs_tp.f:551:25:
+
+  418 |       call MPI_Reduce( ivecloc, ivecred, nvec, MPI_INTEGER,
+      |                       2  
+......
+  551 |         call MPI_Reduce( vecloc, vecred, nvec, MPI_DOUBLE_PRECISION,
+      |                         1
+Warning: Type mismatch between actual argument at (1) and actual argument at (2) (REAL(8)/INTEGER(4)).
+mpif77 -O1 -g -fbacktrace -std=legacy  -c -o utl_mpi.o utl_mpi.f
+mpif77  -o quest_265a.x  lcaomain_tp.o utl_mpi.o lcaosubs_tp.o lcaosubs.o -L /opt/packages/scalapack/2.1.0 -lscalapack -llapack -lblas -lmpi

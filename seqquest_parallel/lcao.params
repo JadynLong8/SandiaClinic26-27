@@ -1,0 +1,61 @@
+c
+c * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+c             Dimension parameters for SEQQUEST code
+c * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+c
+c Configuration:  2 GB/SMALL
+c
+c  Parameters in this file can be changed, limited by available memory/core
+c  The first (maxwkd) dominates the memory size, defining the main arena,
+c   and should be tailored to the RAM/core available.
+c  The second (nrecd) dimension a large bitmap and can/should be adjusted as needed.
+c  The rest of the parameters have a lesser impact on the total memory usage,
+c   and should be set to roughly what is possible with a given maxwkd.
+c
+c Recommended values for given available memory/core:
+c               256MB  500MB  1GB   2GB   4GB   5GB   6GB   8GB   10GB  12GB  16GB
+c   maxwkd/all   33M    66M   132M  265M   xx    xx    xx    xx    xx    xx    xx
+c What is (roughly) free after the OS (dynamic) takes its share ...
+c   maxwkd/free  30M    60M   110M  220M  440M  540M  650M  840M 1000M 1200M 1600M
+c   nrecd       0.5M   1.0M     2M    6M   12M   12M   12M   20M   24M   24M   50M
+c Which means that the following are roughly possible ...
+c   natmd        230    300    420   650   880  1026  1100  1230  1380  1500  1750
+c   norbd       3000   4000   5500  8500 11500 13400 14500 16000 18000 20000 23000
+c
+c Where norbd < (sqrt(maxwkd/3)), and natmd ~ norbd/(orb/atom) [noad=13 main group]
+c NB: natmd/norbd do NOT guarantee these calculations will fit in given maxwkd
+c   might need larger maxwkd to accomodate other allocated workspace
+c
+c maxwkd = max mem for big memory arena: orb matrices and wave fcns on grid
+      PARAMETER  (maxwkd=  220 000 000)
+c inrec= usable bits in int - 1
+c nrecd= max int entries for atom-in-box sparsity bitmap
+      PARAMETER  (inrec=30, nrecd= 6 000 000)
+c
+c natmd=max atoms;  norbd=max total orbitals
+      PARAMETER  (natmd= 650, norbd= 8500)
+c
+c nimgd=max number of independent images (for NEB)
+      PARAMETER  (nimgd=12)
+c ntypd=max atom types
+      PARAMETER  (ntypd= 7)
+c noad=max orbs/atom;  nshld=max shells/atom;  nald=max gauss/shell
+      PARAMETER  (noad=21, nshld=7, nald=6)
+c nrd=max radial mesh pts/local pot
+      PARAMETER  (nrd=200)
+c maxr1d=max linear dimension of total regular grid
+      PARAMETER  (maxr1d= 600)
+c nkd=max k-points; nsymd=max number of symmetries
+c nlatd=max number of unit cells interacting with central cell
+c neqlatd=max number of equivalent lattice vectors (nlocmat)
+      PARAMETER  (nkd=2000, nsymd=48, nlatd=2000, neqlatd=72)
+c
+c   ----------- DO NOT CHANGE ANYTHING BELOW THIS LINE ---------
+c nalfxcd=max alphas for xc fits;  nfitd=max atom types for xc fits
+      PARAMETER  (nalfxcd=1, nfitd=1)
+      PARAMETER  (neq3d=14)
+c
+      PARAMETER  (naldsq=nald**2)
+c
+c * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+c
