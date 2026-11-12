@@ -1,0 +1,496 @@
+ MPINFO::: Global Communicator        :::
+ MPINFO::: Global Context =    0      :::
+ MPINFO::: Global Size =       6      :::
+ MPINFO::: Global Root =       0      :::
+ MPINFO::: Global Rank =       1      :::
+ version 2.68: slics foundation version
+ ========================================================================
+    Program: SEQQUEST - LCAO-PS-DFT electronic structure code
+    Version:  2.68e     Last revised: 29Mar20-PAS
+    Copyright 2007 Sandia Corporation.
+
+    Written by Peter A. Schultz (Sandia National Laboratories)
+    Based on a code originally written by Peter J. Feibelman
+
+    Documentation:  http://www.cs.sandia.gov/~paschul/Quest/
+               and  http://dft.sandia.gov/Quest/
+    Questions, comments to:  paschul@sandia.gov
+ ========================================================================
+  Maximum dimension parameters for this run are:
+  
+   maxwkd (r8 workspace)   = 220000000
+   maxr1d (grid dimension) =       600
+  
+   norbd (basis fcns) =      8500
+   natmd (atoms)      =       650     ntypd (atom types) =         7
+   nshld (shell/atm)  =         7     noad  (bf/atm)     =        21
+   nald  (gauss/shell)=         6     nrd   (rad pts/atm)=       200
+   nkd   (kpts/ibz)   =      2000     nsymd (sym/group)  =        48
+   nimgd (NEB images) =        12
+  
+   nlatd (lattice images)=      2000
+   neq3d (do not ask) =        14
+   Default record length (r8) for i/o=   1000000
+ ------------------------------------------------------------------------
+
+ Before input     +    0.24 =       0.2 seconds wall (    0.02 usr    0.02 sys)
+  
+##### Run options:
+ do setup                                                                        
+ do iters                                                                        
+ do force                                                                        
+ do relax                                                                        
+ do post                                                                         
+ setup data                                                                      
+ >>>>> Options (set/scf/frc/relax/cell/neb/md)= T T T T F F F
+ >>>>> use blas3= T
+ >>>>> split basis = T
+ >>>>> Output level set =           2
+ >>>> do_bands, do_optic, do_nonscf= F F F
+setup data:
+title
+ Title line(s) for this run:
+title2
+functional
+PBE
+ vdw_potential type, default=OFF 
+   OFF   
+dimension of system (0=cluster ... 3=bulk)
+  0
+coordinates
+CARTESIAN
+ scalep: scale factor for problem
+   1.00000000
+scalex
+   7.56947000
+scaley
+   7.56947000
+scalez
+   7.91240000
+primitive lattice vectors
+  30.00000000  0.00000000  0.00000000
+   0.00000000 30.00000000  0.00000000
+   0.00000000  0.00000000100.00000000
+ > Input Cell volume{bohr^3)=    90000.000000
+grid dimensions
+  108 108 400
+ nearby option: 0=0,1=pt,2=wt
+  2
+atom types
+  1
+atom file
+H = h_ae.atm
+>>>>> atom type name=H           
+type number, label:
+  1 H                      
+notes3
+ notes for this atom file:
+ bare nuclear potential
+ generated March-2001, by Peter A. Schultz
+ Changed to triple-zeta s (to recover double-zeta, remove third zeta)
+mass
+   1.00079000D+00
+energy = E(H2)/2
+  -1.16555500D+00
+effective nuclear charge (s1 to 10.0)
+   1.00000000D+00
+pseudopotentials: Lmax, and effective gaussian range
+ -1   1.71000000
+radial mesh: number of points for local and non-local pot integrals
+ 100  80
+mesh points for nuclear potential
+      0.00200000  0.00217968  0.00237551  0.00258893  0.00282152  0.00307501
+      0.00335127  0.00365236  0.00398049  0.00433810  0.00472785  0.00515260
+      0.00561552  0.00612003  0.00666986  0.00726909  0.00792215  0.00863389
+      0.00940957  0.01025494  0.01117626  0.01218036  0.01327466  0.01446727
+      0.01576703  0.01718357  0.01872736  0.02040986  0.02224351  0.02424190
+      0.02641983  0.02879343  0.03138027  0.03419952  0.03727205  0.04062063
+      0.04427005  0.04824734  0.05258195  0.05730599  0.06245444  0.06806544
+      0.07418054  0.08084503  0.08810827  0.09602405  0.10465099  0.11405299
+      0.12429968  0.13546694  0.14763749  0.16090146  0.17535709  0.19111143
+      0.20828116  0.22699345  0.24738688  0.26961248  0.29383487  0.32023343
+      0.34900367  0.38035868  0.41453067  0.45177272  0.49236064  0.53659505
+      0.58480355  0.63734316  0.69460302  0.75700718  0.82501783  0.89913865
+      0.97991859  1.06795593  1.16390267  1.26846941  1.38243058  1.50663019
+      1.64198808  1.78950672  1.95027865  2.12549457  2.31645214  2.52456563
+      2.75137635  2.99856407  3.26795950  3.56155782  3.88153345  4.23025616
+      4.61030863  5.02450558  5.47591460  5.96787887  6.50404194  7.08837469
+      7.72520477  8.41924860  9.17564635 10.00000000
+radwts: weights for radial points
+      0.00017206  0.00018752  0.00020437  0.00022273  0.00024274  0.00026455
+      0.00028832  0.00031422  0.00034245  0.00037322  0.00040675  0.00044329
+      0.00048312  0.00052652  0.00057382  0.00062538  0.00068156  0.00074279
+      0.00080953  0.00088226  0.00096152  0.00104790  0.00114205  0.00124465
+      0.00135647  0.00147834  0.00161116  0.00175591  0.00191366  0.00208559
+      0.00227296  0.00247716  0.00269972  0.00294226  0.00320660  0.00349468
+      0.00380865  0.00415083  0.00452374  0.00493016  0.00537310  0.00585582
+      0.00638192  0.00695528  0.00758015  0.00826117  0.00900336  0.00981224
+      0.01069378  0.01165453  0.01270159  0.01384272  0.01508637  0.01644175
+      0.01791890  0.01952876  0.02128325  0.02319537  0.02527928  0.02755040
+      0.03002557  0.03272311  0.03566301  0.03886703  0.04235890  0.04616448
+      0.05031197  0.05483207  0.05975826  0.06512703  0.07097814  0.07735492
+      0.08430461  0.09187866  0.10013317  0.10912928  0.11893362  0.12961879
+      0.14126394  0.15395530  0.16778687  0.18286109  0.19928960  0.21719407
+      0.23670711  0.25797323  0.28114992  0.30640885  0.33393707  0.36393847
+      0.39663525  0.43226954  0.47110528  0.51343007  0.55955739  0.60982886
+      0.66461678  0.72432694  0.78940154  0.86032254
+number of radial functions  **** H PBE bare-core basis 11Apr01-PAS ****
+  4
+angular momentum, number of alphas
+  0  5
+alphas - s - Ham-II/PBE/4s408 + a5(19.22) + full recontract in H2
+   1.02474000D-01  3.72304000D-01  1.23085800D+00  4.78332400D+00
+   1.92200000D+01
+wave function coefficients
+   1.04060000D-01  4.80100000D-01  5.85350000D-01  3.97563000D-01
+   2.69130000D-01
+angular momentum, number of alphas
+  0  2
+alphas - s - second zeta s polarization (H2O Eopt)
+   1.02474000D-01  3.72304000D-01
+wave function coefficients
+   7.52810000D-02  1.20939000D-01
+angular momentum, number of alphas
+  0  1
+alphas - s - third zeta s polarization (H2O Eopt)
+   1.02474000D-01
+wave function coefficients
+   1.00000000D+00
+angular momentum, number of alphas
+  1  1
+alphas - p - angular polarization (dzp Eopt H2)
+   1.10000000D+00
+wave function coefficients
+   1.00000000D+00
+shell occupancies for hydrogen, H: s(1.00)p(0.00)
+      1.00000000  0.00000000  0.00000000  0.00000000
+end atom file
+ ionopt (0=none,2=gaussian lmcc,3=dble layer):
+    2
+ charge state for system
+   0.00000000
+number of atoms in unit cell
+    2
+atom, type, position;  step#     38
+ ATmeH1       H                 1.6412530100    1.6745628952   -3.2091820550    
+ ATmeH2       H                 1.4598988630    1.7184014439   -3.1913285809    
+origin offset
+   1.00000000  1.00000000  0.00000000
+ symmetry center
+   1.00000000  1.00000000  0.00000000
+end setup phase data
+ >>>> Total number of electrons=               2.0000000000
+ >>>> Minimum number of occupied states=           1
+ >>>> Number of basis functions, norb=          12
+ ************** VERSION 2.65 CHANGE: ***************
+ **** grid range default changed from 2.d-7 to 2.d-8
+ **** This will cause numerical changes in results
+ **** To recover pre-2.65, use input cutgrd/2.d-7
+ ***************************************************
+run phase input data
+history
+    8
+iterations
+  125
+blend ratio
+   0.05000000
+convergence criterion
+   0.00100000
+geometry relaxation
+gmethod
+asd
+gfixed
+    1    1 => fixed atom sequence
+gsteps
+  450
+end geometry relaxation
+
+ >>>> Relax params (gstop,gblend,gconv,atoms-relaxd):
+ >>>>    450  1.5000000  0.000800000000      1
+
+end run phase data
+cutXXX for code (grd,slo,ii,1c)
+   2.00000000D-08  1.00000000D-01  1.00000000D-02  1.00000000D-04
+cutall for code (s,t,nl,loc;frc)
+   3.00000000D-09  3.00000000D-09  1.50000000D-07  6.00000000D-08
+   3.00000000D-07  3.00000000D-07  5.00000000D-06  6.00000000D-06
+
+ ##### output #####
+
+ MPINFO::: Local Communicator         :::
+ MPINFO::: Local Context =    0       :::
+ MPINFO::: Local Size =       6       :::
+ MPINFO::: Local Root =       0       :::
+ MPINFO::: Local Rank =       1       :::
+ Maximum record length (r8) for i/o=     1000000
+ Flavor of dft that will be used for this run=PBE   
+ ***** Note: basis transformed to split basis form
+ SCF guessing turned on, option=           2
+  
+ LATVEC: nlat1c,nlat2c,nlat =           1           1           1
+
+  Atom
+  Type  Shell  Min-alf     range
+    1        0.102474   9.300415
+ Turnover EF->DM npopdm, npop0k=           6           1
+ DEV264h/wkmem: perlsolv dist-mem
+ DEV/wkmem: KPSTORE= F
+ DEV/wkmem: psolv version, input do_psolv= F
+
+ Need        1500-length r*4 array to pack grid wfcns/box
+ Need      121300-length r*4 array to pack all grid wfcns
+ Need        1500-length r*4 array for grid wfcns scratch
+ WKMEM: using stripe-parallel+Merge  setup
+ Minimum maxwkd for scf to complete=    65319284
+ All grid wfcns stored in     60650 of 164011894 available
+ WKMEM: in-core Broyden! uses       432 out of 163951244 available
+ >>>>> geom/basis data saved to file
+  
+ Atom type   1  radial valence charge =    0.999999985299
+ mat0set: stripe-parallel, KPSTORE= F
+
+   sij compute    +    0.02 =       0.3 seconds wall (    0.00 usr    0.02 sys)
+
+   sij/nlat-bcast +    0.00 =       0.3 seconds wall (    0.00 usr    0.00 sys)
+
+   vlocmat compute+    0.00 =       0.3 seconds wall (    0.00 usr    0.00 sys)
+
+   vlocmii compute+    0.00 =       0.3 seconds wall (    0.00 usr    0.00 sys)
+
+   nlocmat compute+    0.00 =       0.3 seconds wall (    0.00 usr    0.00 sys)
+ NLOCMAT: Max neqilat=           0
+
+ After mat0set    +    0.00 =       0.3 seconds wall (    0.00 usr    0.00 sys)
+
+ grid0xc compute+    0.40 =       0.7 seconds wall (    0.18 usr    0.21 sys)
+
+ grid0xc Merge  +    0.07 =       0.7 seconds wall (    0.07 usr    0.00 sys)
+
+ grid0xc Bcast  +    0.30 =       1.0 seconds wall (    0.17 usr    0.13 sys)
+
+
+ AFTER SETUP PHASE+    0.20 =       1.2 seconds wall (    0.18 usr    0.02 sys)
+
+  
+ *************************  iteration   0 begins here  *************************
+
+
+ Before iterations+    0.89 =       2.1 seconds wall (    0.87 usr    0.02 sys)
+  
+ grid-integrated valence-density total =        1.9998309742
+ Harris Fcnal XC piece=        0.3884095331
+  
+  
+
+ After 0 iteration+    0.44 =       2.6 seconds wall (    0.36 usr    0.08 sys)
+ *************************  iteration   1 begins here  *************************
+
+
+ erlsolv/begin  +    0.00 =       2.6 seconds wall (    0.00 usr    0.00 sys)
+ PERLSOLV: kpp-copmatible version
+
+ erlsolv/schroed+    0.01 =       2.6 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/pop    +    0.00 =       2.6 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/dmat compute+    0.00 =       2.6 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/rhoij  +    0.00 =       2.6 seconds wall (    0.00 usr    0.00 sys)
+
+         fermi level =   -0.352078 Ry,   gap(0K)= 0.855033 Ry =11.633 eV
+
+ k-vector:       1
+  weight:    1.000000
+            level    occup
+  
+    1    -0.779595  2.0000
+    2     0.075438  0.0000
+    3     0.387732  0.0000
+    4     0.929420  0.0000
+    5     3.192225  0.0000
+    6     3.192254  0.0000
+    7     3.885413  0.0000
+    8     4.847489  0.0000
+    9     5.043204  0.0000
+             ...      ...
+   11     5.616541  0.0000
+  
+ delta movement in electrons =        0.2828560707
+
+ one-center local charge defect =         0.00010417
+  
+ grid-integrated valence-density total =        1.9998862977
+  
+ TOTAL single particle eigenvalue sum=        -1.5591896117
+  
+ electronic meth_bl(BROYDEN)=           1
+ EBROYDDJ: in-core history
+>>>>> Broyden: first step (elec) simple blend ratio= 0.050000
+<<<<< Broyden step complete, scf step=     1
+
+ After blending   +    2.95 =       5.5 seconds wall (    2.86 usr    0.08 sys)
+  
+ *************************  iteration   2 begins here  *************************
+
+
+ erlsolv/begin  +    0.00 =       5.5 seconds wall (    0.00 usr    0.00 sys)
+ PERLSOLV: kpp-copmatible version
+
+ erlsolv/schroed+    0.00 =       5.5 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/pop    +    0.00 =       5.5 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/dmat compute+    0.00 =       5.5 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/rhoij  +    0.00 =       5.5 seconds wall (    0.00 usr    0.00 sys)
+
+         fermi level =   -0.351154 Ry,   gap(0K)= 0.853969 Ry =11.619 eV
+  
+ delta movement in electrons =        0.2826783317
+
+ one-center local charge defect =         0.00010397
+  
+ grid-integrated valence-density total =        1.9998865360
+  
+ TOTAL single particle eigenvalue sum=        -1.5562776044
+  
+ electronic meth_bl(BROYDEN)=           1
+>>>>> Broyden blend to get next step - elec
+<<<<< Broyden step complete, scf step=     2
+
+ After blending   +    2.91 =       8.4 seconds wall (    2.80 usr    0.09 sys)
+  
+ *************************  iteration   3 begins here  *************************
+
+
+ erlsolv/begin  +    0.00 =       8.4 seconds wall (    0.00 usr    0.00 sys)
+ PERLSOLV: kpp-copmatible version
+
+ erlsolv/schroed+    0.00 =       8.4 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/pop    +    0.00 =       8.4 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/dmat compute+    0.00 =       8.4 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/rhoij  +    0.00 =       8.4 seconds wall (    0.00 usr    0.00 sys)
+
+         fermi level =   -0.339254 Ry,   gap(0K)= 0.840120 Ry =11.431 eV
+  
+ delta movement in electrons =        0.2814772926
+
+ one-center local charge defect =         0.00010142
+  
+ grid-integrated valence-density total =        1.9998892113
+  
+ TOTAL single particle eigenvalue sum=        -1.5186291675
+  
+ electronic meth_bl(BROYDEN)=           1
+>>>>> Broyden blend to get next step - elec
+<<<<< Broyden step complete, scf step=     3
+
+ After blending   +    2.89 =      11.3 seconds wall (    2.83 usr    0.06 sys)
+  
+ *************************  iteration   4 begins here  *************************
+
+
+ erlsolv/begin  +    0.00 =      11.3 seconds wall (    0.00 usr    0.00 sys)
+ PERLSOLV: kpp-copmatible version
+
+ erlsolv/schroed+    0.01 =      11.3 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/pop    +    0.00 =      11.3 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/dmat compute+    0.00 =      11.3 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/rhoij  +    0.00 =      11.3 seconds wall (    0.00 usr    0.00 sys)
+
+         fermi level =   -0.339371 Ry,   gap(0K)= 0.840131 Ry =11.431 eV
+  
+ delta movement in electrons =        0.2815111596
+
+ one-center local charge defect =         0.00010140
+  
+ grid-integrated valence-density total =        1.9998892917
+  
+ TOTAL single particle eigenvalue sum=        -1.5188733802
+  
+ electronic meth_bl(BROYDEN)=           1
+>>>>> Broyden blend to get next step - elec
+<<<<< Broyden step complete, scf step=     4
+
+ After blending   +    2.91 =      14.2 seconds wall (    2.84 usr    0.06 sys)
+  
+ *************************  iteration   5 begins here  *************************
+
+
+ erlsolv/begin  +    0.00 =      14.2 seconds wall (    0.00 usr    0.00 sys)
+ PERLSOLV: kpp-copmatible version
+
+ erlsolv/schroed+    0.00 =      14.2 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/pop    +    0.00 =      14.2 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/dmat compute+    0.00 =      14.2 seconds wall (    0.00 usr    0.00 sys)
+
+ erlsolv/rhoij  +    0.00 =      14.2 seconds wall (    0.00 usr    0.00 sys)
+
+         fermi level =   -0.340518 Ry,   gap(0K)= 0.839463 Ry =11.422 eV
+  
+ delta movement in electrons =        0.2820305765
+
+ one-center local charge defect =         0.00010094
+  
+ grid-integrated valence-density total =        1.9998896987
+  
+ TOTAL single particle eigenvalue sum=        -1.5204976137
+  
+ ######################  ENERGY ANALYSIS  #######################
+    Spherical-atom es ENERGY correction =        -1.1597887144
+    Full spherical atom trace ENERGY =           -2.2839834832
+    Spherical-atom-Vxc trace ENERGY =             2.4773150750
+    non-spherical es ENERGY =                     0.0088947557
+    Total Exc ENERGY =                           -1.3737117713
+
+    total kinetic trace ENERGY =            2.2574843083
+    non-local ps-pot trace ENERGY =         0.0000000000
+    total electrostatic ENERGY =           -3.2150466752
+    Total Vxc ENERGY =                     -1.7627433602
+
+    TOTAL ENERGY (Rydberg) =                     -2.3312741383
+
+ ################################################################
+
+ After blending   +    2.89 =      17.1 seconds wall (    2.84 usr    0.04 sys)
+  
+ >>>>> self-consistency achieved, iteration   5
+
+
+ FINAL CONVERGED ENERGY (Rydberg) =       -2.3312741383
+ Binding energy =       -0.0001641383 Ry =             -0.0022 eV
+
+ AFTER ITERATIONS +    0.00 =      17.1 seconds wall (    0.00 usr    0.00 sys)
+
+ atom xc0frc stress term=        1.1785697614
+ mat0frc: stripe-parallel, KPSTORE= F
+  
+ total force contributions(Ry/bohr):
+        atom       x force          y force          z force
+          1     -0.0002701539     0.0010186821     0.0002969047
+          2      0.0000923084    -0.0006457709    -0.0001013559
+      f-defect       -0.0001778456     0.0003729112     0.0001955488
+
+ AFTER FORCE RTNS +    0.34 =      17.5 seconds wall (    0.29 usr    0.06 sys)
+  
+
+ ###############################################################################
+ FINAL GEOMETRY for step   1, of   1 total
+ ATmeH1       H                 1.6412530100    1.6745628952   -3.2091820550 
+ ATmeH2       H                 1.4598988630    1.7184014439   -3.1913285809 
+ ###############################################################################
+
+ FINAL RELAXED ENERGY =       -2.3312741383
+
+
+ AFTER GEOMETRY   +    0.00 =      17.5 seconds wall (    0.00 usr    0.00 sys)
+ Normal exit: RELAX DONE
+ Total TIME=      17.5 seconds (usr=      16.3  sys=       0.9  lost=       0.3)

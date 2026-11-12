@@ -1,0 +1,42 @@
+norb,ntyp,nstate,nk,ncplx,nspin
+     12      1     11      1      1      1
+fermi level and electron temperature (Ry)
+    -0.34051750     0.00300000
+weights for k-points
+     1.00000000
+k-points (bohr^-1)
+     0.00000000     0.00000000     0.00000000
+eigval (((i,k,isp),i=1,nstate),k=1,nk),isp=1,nspin (Ry)
+    -0.76024881     0.07921380     0.39437319     0.94218248     3.21189314
+     3.21195676     3.90773221     4.87339632     5.06361351     5.06368556
+     5.64106712
+eigpop (((i,k,isp),i=1,nstate),k=1,nk),isp=1,nspin
+     2.00000000     0.00000000     0.00000000     0.00000000     0.00000000
+     0.00000000     0.00000000     0.00000000     0.00000000     0.00000000
+     0.00000000
+labels for basis functions and atoms
+   bf#   atm# bftype atomname atomtype
+      1     1 s      H         1
+      2     1 s      H         1
+      3     1 s      H         1
+      4     1 x      H         1
+      5     1 y      H         1
+      6     1 z      H         1
+      7     2 s      H         1
+      8     2 s      H         1
+      9     2 s      H         1
+     10     2 x      H         1
+     11     2 y      H         1
+     12     2 z      H         1
+contracted basis fcns for each atom type
+   4
+   3   1   1   1
+   0   0   0   1
+       1.23085800       4.78332400      19.22000000
+       2.42824672       1.64923729       1.11645005
+       0.37230400
+       1.20417138
+       0.10247400
+       0.45758870
+       1.10000000
+       3.28643653

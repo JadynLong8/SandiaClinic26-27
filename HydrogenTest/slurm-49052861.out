@@ -1,0 +1,134 @@
+------------------------------------------------
+Job started at: Mon Oct 12 00:08:57 EDT 2026
+------------------------------------------------
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x150e23c585af in ???
+#1  0x432bf0 in ???
+#0  0x1536c3f435af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x1536c3f2f7e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x149c172035af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x149c171ef7e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x14ebf10c55af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x14ebf10b17e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x14e297bda5af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x14e297bc67e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x14dd3b6e95af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x14dd3b6d57e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x14b7ec22c5af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x14b7ec2187e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x152003dd45af in ???
+#0  0x152e728fe5af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x152e728ea7e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#0  0x147bb2cf25af in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x147bb2cde7e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x150e23c447e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+#1  0x432bf0 in ???
+#2  0x507d4f in ???
+#3  0x407c27 in ???
+#4  0x40502c in ???
+#5  0x152003dc07e4 in ???
+#6  0x40505d in ???
+#7  0xffffffffffffffff in ???
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 81660 on node r360 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
+------------------------------------------------
+Job ended at: Mon Oct 12 00:08:59 EDT 2026
+Total Runtime: 0h 0m 2s
+------------------------------------------------

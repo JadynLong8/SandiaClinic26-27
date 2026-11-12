@@ -1,0 +1,56 @@
+do setup
+do iters
+do force
+do relax
+do post
+setup data
+title
+title2
+functional
+PBE
+dimension of system (0=cluster ... 3=bulk)
+ 0
+coordinates
+CARTESIAN
+scalex
+7.5694700000
+scaley
+7.5694700000
+scalez
+7.912400
+primitive lattice vectors
+  30.0000000000      0.0000000000      0.0000000000
+  0.0000000000      30.0000000000      0.0000000000
+  0.0000000000      0.0000000000    100.0000000000
+grid dimensions
+       108 108  400
+atom types
+ 1
+atom file 
+H = h_ae.atm
+number of atoms in unit cell
+2
+atom, type, position;  step#     38
+ ATmeH1       H                 1.6412530100    1.6745628952   -3.2091820550 
+ ATmeH2       H                 1.4598988630    1.7184014439   -3.1913285809 
+origin offset 
+ 1.0  1.0 0.0
+end setup phase data
+run phase input data
+history
+8
+iterations
+ 125
+blend ratio
+0.050
+convergence criterion
+  0.001000
+geometry relaxation
+gmethod
+asd
+gfixed
+1 1
+gsteps
+450
+end geometry relaxation
+end run phase data

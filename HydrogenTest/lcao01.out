@@ -1,0 +1,132 @@
+ MPINFO::: Global Communicator        :::
+ MPINFO::: Global Context =    0      :::
+ MPINFO::: Global Size =      10      :::
+ MPINFO::: Global Root =       0      :::
+ MPINFO::: Global Rank =       1      :::
+ version 2.68: slics foundation version
+ ========================================================================
+    Program: SEQQUEST - LCAO-PS-DFT electronic structure code
+    Version:  2.68e     Last revised: 29Mar20-PAS
+    Copyright 2007 Sandia Corporation.
+
+    Written by Peter A. Schultz (Sandia National Laboratories)
+    Based on a code originally written by Peter J. Feibelman
+
+    Documentation:  http://www.cs.sandia.gov/~paschul/Quest/
+               and  http://dft.sandia.gov/Quest/
+    Questions, comments to:  paschul@sandia.gov
+ ========================================================================
+  Maximum dimension parameters for this run are:
+  
+   maxwkd (r8 workspace)   = 220000000
+   maxr1d (grid dimension) =       600
+  
+   norbd (basis fcns) =      8500
+   natmd (atoms)      =       650     ntypd (atom types) =         7
+   nshld (shell/atm)  =         7     noad  (bf/atm)     =        21
+   nald  (gauss/shell)=         6     nrd   (rad pts/atm)=       200
+   nkd   (kpts/ibz)   =      2000     nsymd (sym/group)  =        48
+   nimgd (NEB images) =        12
+  
+   nlatd (lattice images)=      2000
+   neq3d (do not ask) =        14
+   Default record length (r8) for i/o=   1000000
+ ------------------------------------------------------------------------
+
+ Before input     +    0.24 =       0.2 seconds wall (    0.03 usr    0.07 sys)
+  
+##### Run options:
+ do setup                                                                        
+ do iters                                                                        
+ do force                                                                        
+ do relax                                                                        
+ do post                                                                         
+ setup data                                                                      
+ >>>>> Options (set/scf/frc/relax/cell/neb/md)= T T T T F F F
+ >>>>> use blas3= T
+ >>>>> split basis = T
+ >>>>> Output level set =           2
+ >>>> do_bands, do_optic, do_nonscf= F F F
+setup data:
+title
+ Title line(s) for this run:
+title2
+functional
+PBE
+ vdw_potential type, default=OFF 
+   OFF   
+dimension of system (0=cluster ... 3=bulk)
+  0
+coordinates
+CARTESIAN
+ scalep: scale factor for problem
+   1.00000000
+scalex
+   7.56947000
+scaley
+   7.56947000
+scalez
+   7.91240000
+primitive lattice vectors
+  30.00000000  0.00000000  0.00000000
+   0.00000000 30.00000000  0.00000000
+   0.00000000  0.00000000100.00000000
+ > Input Cell volume{bohr^3)=    90000.000000
+grid dimensions
+  108 108 400
+ nearby option: 0=0,1=pt,2=wt
+  2
+atom types
+  1
+atom file
+H = h_ae.atm
+>>>>> atom type name=H           
+type number, label:
+  1 H                      
+notes3
+ notes for this atom file:
+ bare nuclear potential
+ generated March-2001, by Peter A. Schultz
+ Changed to triple-zeta s (to recover double-zeta, remove third zeta)
+mass
+   1.00079000D+00
+energy = E(H2)/2
+  -1.16555500D+00
+effective nuclear charge (s1 to 10.0)
+   1.00000000D+00
+pseudopotentials: Lmax, and effective gaussian range
+ -1   1.71000000
+radial mesh: number of points for local and non-local pot integrals
+ 100  80
+mesh points for nuclear potential
+      0.00200000  0.00217968  0.00237551  0.00258893  0.00282152  0.00307501
+      0.00335127  0.00365236  0.00398049  0.00433810  0.00472785  0.00515260
+      0.00561552  0.00612003  0.00666986  0.00726909  0.00792215  0.00863389
+      0.00940957  0.01025494  0.01117626  0.01218036  0.01327466  0.01446727
+      0.01576703  0.01718357  0.01872736  0.02040986  0.02224351  0.02424190
+      0.02641983  0.02879343  0.03138027  0.03419952  0.03727205  0.04062063
+      0.04427005  0.04824734  0.05258195  0.05730599  0.06245444  0.06806544
+      0.07418054  0.08084503  0.08810827  0.09602405  0.10465099  0.11405299
+      0.12429968  0.13546694  0.14763749  0.16090146  0.17535709  0.19111143
+      0.20828116  0.22699345  0.24738688  0.26961248  0.29383487  0.32023343
+      0.34900367  0.38035868  0.41453067  0.45177272  0.49236064  0.53659505
+      0.58480355  0.63734316  0.69460302  0.75700718  0.82501783  0.89913865
+      0.97991859  1.06795593  1.16390267  1.26846941  1.38243058  1.50663019
+      1.64198808  1.78950672  1.95027865  2.12549457  2.31645214  2.52456563
+      2.75137635  2.99856407  3.26795950  3.56155782  3.88153345  4.23025616
+      4.61030863  5.02450558  5.47591460  5.96787887  6.50404194  7.08837469
+      7.72520477  8.41924860  9.17564635 10.00000000
+radwts: weights for radial points
+      0.00017206  0.00018752  0.00020437  0.00022273  0.00024274  0.00026455
+      0.00028832  0.00031422  0.00034245  0.00037322  0.00040675  0.00044329
+      0.00048312  0.00052652  0.00057382  0.00062538  0.00068156  0.00074279
+      0.00080953  0.00088226  0.00096152  0.00104790  0.00114205  0.00124465
+      0.00135647  0.00147834  0.00161116  0.00175591  0.00191366  0.00208559
+      0.00227296  0.00247716  0.00269972  0.00294226  0.00320660  0.00349468
+      0.00380865  0.00415083  0.00452374  0.00493016  0.00537310  0.00585582
+      0.00638192  0.00695528  0.00758015  0.00826117  0.00900336  0.00981224
+      0.01069378  0.01165453  0.01270159  0.01384272  0.01508637  0.01644175
+      0.01791890  0.01952876  0.02128325  0.02319537  0.02527928  0.02755040
+      0.03002557  0.03272311  0.03566301  0.03886703  0.04235890  0.04616448
+      0.05031197  0.05483207  0.05975826  0.06512703  0.07097814  0.07735492
+      0.08430461  0.09187866  0.10013317  0.10912928  0.11893362  0.12961879
