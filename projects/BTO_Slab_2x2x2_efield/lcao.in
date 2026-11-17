@@ -9,7 +9,7 @@ title2
 dimension of system (0=cluster ... 3=bulk)
 2
 functional
-LDA
+PBE
 efield   (Ry/bohr)
   0.0  0.0  0.0038893
 coordinates
