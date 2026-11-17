@@ -1,24 +1,19 @@
 #!/bin/bash
-#SBATCH --job-name=BTO_efield
+#SBATCH --job-name=BTO_efield_test
 #SBATCH --account=HMC120      # required on Expanse
 #SBATCH --partition=shared               # or "compute" for a whole 128-core node
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
 #SBATCH --mem=120G                       # set memory explicitly
-#SBATCH -t 12:00:00
+#SBATCH -t 00:30:00
 #SBATCH --output=slurm-%j.out
 #SBATCH --export=ALL
 
 module purge
-module load cpu/0.15.4
-module load slurm
-module load intel/19.1.1.217
-module load intel-mpi/2019.8.254
-module load intel-mkl/2020.1.217
+module load cpu/0.15.4 slurm gcc/9.2.0 openmpi/3.1.6 openblas netlib-scalapack/2.1.0-openblas
 
 export OMP_NUM_THREADS=1
-ulimit -s unlimited            # big Fortran stack arrays are a common segfault cause
+ulimit -s unlimited
 
-cd $SLURM_SUBMIT_DIR           # run where you typed sbatch, no hard-coded path
-
-srun --mpi=pmi2 -n $SLURM_NTASKS /expanse/lustre/projects/<proj>/$USER/SeqQuest/<path>/quest_268e.x
+cd $SLURM_SUBMIT_DIR
+srun --mpi=pmi2 -n $SLURM_NTASKS /expanse/lustre/projects/hmc120/jlong6/software/seqquest_parallel/quest_265a.x
